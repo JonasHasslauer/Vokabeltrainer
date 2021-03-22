@@ -1,18 +1,17 @@
+import javax.xml.crypto.Data;
 import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
-        try{
-            Data.readDataFromFile("Data/Test.txt");
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        DataImporter importer = new DataImporter("Data/Test.txt");
+        Card card = new Card();
 
+        importer.readDataFromFile();
+        System.out.println(importer.toString());
 
-
-
+        System.out.println(card.createMainCard());
 
 
 
