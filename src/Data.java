@@ -1,23 +1,24 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Data {
 
-    String[] wordsEnglisch;
-    String[] wordsDeutsch;
+    static String streamUntreated = "";
 
-    public static void readDataFromFile(String path) throws IOException {
+    public static String readDataFromFile(String path) throws IOException {
 
         BufferedReader br = new BufferedReader(new FileReader(path));
 
         String line = br.readLine();
 
         while(line != null){
-            System.out.print(line + "\n");
+            //System.out.print(line);
+            streamUntreated += line;
             line = br.readLine();
         }
+
+        return streamUntreated;
     }
 
     /**
@@ -32,7 +33,11 @@ public class Data {
      * @param dataStream the read content from a file
      */
 
-    public static void convertDataToArrays(String dataStream){
+    public static void convertData(String dataStream, int line){
+
+        Card neueKarte = new Card();
+        neueKarte.setFront();
+        neueKarte.setBack();
 
     }
 
