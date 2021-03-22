@@ -2,9 +2,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/***
+ * Common utilities and functionalities for handling the specific project data
+ */
+
 public class Data {
 
-    static String streamUntreated = "";
+    private static String streamUntreated;
 
     public static String readDataFromFile(String path) throws IOException {
 
@@ -13,7 +17,6 @@ public class Data {
         String line = br.readLine();
 
         while(line != null){
-            //System.out.print(line);
             streamUntreated += line;
             line = br.readLine();
         }
@@ -35,9 +38,13 @@ public class Data {
 
     public static void convertData(String dataStream, int line){
 
-        Card neueKarte = new Card();
-        neueKarte.setFront();
-        neueKarte.setBack();
+        //TODO
+
+    }
+
+    public static void split2Lines(String construct){
+
+
 
     }
 

@@ -4,10 +4,8 @@ public class Main {
 
     public static void main(String[] args){
 
-        Data data = new Data();
-
         try{
-            Data.readDataFromFile("Daten/Test.txt");
+            Data.readDataFromFile("Data/Test.txt");
         }catch (IOException e){
             e.printStackTrace();
         }
