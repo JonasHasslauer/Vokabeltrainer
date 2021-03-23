@@ -61,14 +61,6 @@ public class Card {
         this.difficulty = difficulty;
     }
 
-    public void setCurrentCard(Card card){
-        this.currentCard = card;
-    }
-
-    public Card getCurrentCard(){
-        return this.currentCard;
-    }
-
     @Override
     public String toString(){
         return
