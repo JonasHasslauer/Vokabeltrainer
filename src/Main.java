@@ -1,19 +1,23 @@
-import javax.xml.crypto.Data;
-import java.io.IOException;
-
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         DataImporter importer = new DataImporter("Data/Test.txt");
-        Card card = new Card();
 
         importer.readDataFromFile();
-        System.out.println(importer.toString());
 
-        System.out.println(card.createMainCard());
+        String[] dataSplitted = importer.getData().split(";");
 
+        /*
+        Prints all Cards and deleting whitespaces while creating Card objects
+         */
 
+        int cardNumber = 0;
+        for(int i = 1; i < dataSplitted.length; i++){
+            System.out.println(new Card(cardNumber, dataSplitted[i-1].strip(), dataSplitted[i].strip()));
+            cardNumber++;
+            i++;
+        }
 
 
     }

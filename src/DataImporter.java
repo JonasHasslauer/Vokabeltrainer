@@ -9,8 +9,7 @@ import java.io.IOException;
 
 public class DataImporter {
 
-    String streamUntreated;
-    String streamTreated;
+    String stream = "";
     String filePath;
 
     BufferedReader br;
@@ -26,20 +25,27 @@ public class DataImporter {
             String line = br.readLine();
 
             while (line != null) {
-                this.streamUntreated += line;
+                this.stream += line;
                 line = br.readLine();
             }
+
+            br.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public String getData(){
+        return this.stream;
     }
 
 
 
     @Override
     public String toString(){
-        return this.streamUntreated;
+        return this.stream;
     }
 
 }

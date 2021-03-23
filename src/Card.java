@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-
 public class Card {
 
     int number; //fortlaufend
@@ -10,33 +7,10 @@ public class Card {
     Card currentCard;
     String difficulty;
 
-    final int CARD_SIZE_MAIN = 2;
-
-    BufferedReader br;
-
-    public Card(){};
-
-    public Card(String front, String back){
+    public Card(int number, String front, String back){
+        this.number = number+1;
         this.front = front;
         this.back = back;
-    }
-
-    public String[] createMainCard(){
-
-        String[] line = new String[CARD_SIZE_MAIN];
-        String line_text = "";
-
-        try{
-            line_text = br.readLine();
-            while(line != null){
-                line = line_text.split(";");
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-        return line;
-
     }
 
     public int getNumber() {
@@ -85,6 +59,17 @@ public class Card {
 
     public Card getCurrentCard(){
         return this.currentCard;
+    }
+
+    @Override
+    public String toString(){
+        return
+                "Number: " + this.number + "\n" +
+                "Front: '" + this.front + "'\n" +
+                "Back: '" + this.back + "'\n" +
+                "Progress: " + this.progress + "\n" +
+                "Difficulty: " + this.difficulty + "\n";
+
     }
 
 
