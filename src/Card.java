@@ -4,13 +4,21 @@ public class Card {
     String front;
     String back;
     String progress;
-    Card currentCard;
+    //Card currentCard;
     String difficulty;
 
     public Card(int number, String front, String back){
         this.number = number+1;
         this.front = front;
         this.back = back;
+    }
+
+    public Card(int number, String front, String back, String progress, String difficulty){
+        this.number = number+1;
+        this.front = front;
+        this.back = back;
+        this.progress = progress;
+        this.difficulty = difficulty;
     }
 
     public int getNumber() {

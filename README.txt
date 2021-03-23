@@ -11,6 +11,8 @@ The program will show the words to the user, who will be able to decide whether 
 
 What are the current functions of the program:
 
+- creates cards out of a pair of two words (german, english)
+- prints out full cards (number, german, english, progress, difficulty) and formats it
 -
 
 ------------------------------------------------------------------------------------------------------------------------

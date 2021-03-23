@@ -18,7 +18,7 @@ public class DataImporter {
         this.filePath = filePath;
     }
 
-    public void readDataFromFile() {
+    public String readDataFromFile(String filePath) {
 
         try {
             br = new BufferedReader(new FileReader(filePath));
@@ -35,16 +35,11 @@ public class DataImporter {
             e.printStackTrace();
         }
 
+        return this.stream;
+
     }
 
     public String getData(){
-        return this.stream;
-    }
-
-
-
-    @Override
-    public String toString(){
         return this.stream;
     }
 
